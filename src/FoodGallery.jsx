@@ -16,6 +16,7 @@ const FoodGallery = () => {
   useEffect(() => {
     const fetchApi = async () => {
         // setItems(true);
+        setLoading(true)
       try {
         
         const url = `https://www.themealdb.com/api/json/v1/1/filter.php?a=${sort}`;
@@ -23,7 +24,7 @@ const FoodGallery = () => {
         const resData = await res.json();
         // console.log(resData.meals[0].strMealThumb);
         setItems(resData.meals);
-        // setLoading(false);
+        setLoading(false);
         // console.log(Items);
         // setSort(resData.meals[0].strMealThumb);
       } catch (error) {
